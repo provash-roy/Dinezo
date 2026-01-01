@@ -4,6 +4,7 @@ import Explore from "../layouts/Explore";
 import Login from "../pages/Login";
 import Main from "../layouts/Main";
 import Home from "../pages/Home";
+import RestaurantMenu from "../pages/Home/components/RestaurantMenu";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         element: <Explore />,
       },
     ],
+  },
+  {
+    path: "/restaurants/:id",
+    element: <RestaurantMenu />,
   },
   {
     path: "/login",
