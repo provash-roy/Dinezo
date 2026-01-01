@@ -1,14 +1,16 @@
-
 import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <nav>
-      <div>
+    <nav className="p-4 border border-gray-300 font-semibold">
+      <div className="flex justify-between">
         <div>
-          <h2>DINEZO</h2>
+          <Link to="/" className="text-xl">
+           
+            <h2>DINEZO</h2>{" "}
+          </Link>
         </div>
-        <div>
+        <div className="flex gap-2">
           <Link to="/">Home</Link>
           <Link to="/explore">Explore</Link>
           <Link to="/login">Login</Link>
