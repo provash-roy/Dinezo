@@ -33,7 +33,7 @@ const steps = [
 
 const HowItWorks = () => {
     return (
-        <section className="py-20 bg-white relative overflow-hidden">
+        <section className="py-12 sm:py-14 md:py-16 lg:py-20 bg-white relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-10 left-10 text-9xl">🍕</div>
@@ -42,17 +42,17 @@ const HowItWorks = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16 animate-fade-in">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <div className="text-center mb-10 sm:mb-12 md:mb-14 lg:mb-16 animate-fade-in">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
                         How It <span className="gradient-text">Works</span>
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
                         Get your favorite food delivered in just 4 simple steps
                     </p>
                 </div>
 
                 {/* Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                     {steps.map((step, index) => (
                         <div
                             key={step.id}
@@ -67,24 +67,24 @@ const HowItWorks = () => {
                             )}
 
                             {/* Step Card */}
-                            <div className="relative bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer border-2 border-gray-100 hover:border-orange-200">
+                            <div className="relative bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer border-2 border-gray-100 hover:border-orange-200">
                                 {/* Step Number */}
-                                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                <div className="absolute -top-3 sm:-top-4 -right-3 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-lg">
                                     {step.id}
                                 </div>
 
                                 {/* Icon */}
-                                <div className={`w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center text-5xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                <div className={`w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 sm:mb-6 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center text-4xl sm:text-5xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                     {step.icon}
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900">
                                     {step.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-gray-600">
+                                <p className="text-gray-600 text-sm sm:text-base">
                                     {step.description}
                                 </p>
                             </div>
@@ -93,8 +93,8 @@ const HowItWorks = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="text-center mt-16">
-                    <button className="btn-primary text-lg px-10 py-4">
+                <div className="text-center mt-12 sm:mt-14 md:mt-16">
+                    <button className="btn-primary text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4">
                         Get Started Now
                     </button>
                 </div>

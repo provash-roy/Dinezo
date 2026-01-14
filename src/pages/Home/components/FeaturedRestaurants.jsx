@@ -5,13 +5,13 @@ const FeaturedRestaurants = ({ restaurants }) => {
     // If no restaurants, show skeleton
     if (!restaurants || restaurants.length === 0) {
         return (
-            <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-12 sm:py-14 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
                             Featured <span className="gradient-text">Restaurants</span>
                         </h2>
-                        <p className="text-gray-600 text-lg">Loading amazing restaurants...</p>
+                        <p className="text-gray-600 text-base sm:text-lg px-4">Loading amazing restaurants...</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[1, 2, 3].map((i) => (
@@ -33,14 +33,14 @@ const FeaturedRestaurants = ({ restaurants }) => {
     const featured = restaurants.slice(0, 6);
 
     return (
-        <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 sm:py-14 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-12 animate-fade-in">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <div className="text-center mb-8 sm:mb-10 md:mb-12 animate-fade-in">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
                         Featured <span className="gradient-text">Restaurants</span>
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
                         Handpicked restaurants offering the best dining experience
                     </p>
                 </div>
@@ -53,12 +53,12 @@ const FeaturedRestaurants = ({ restaurants }) => {
                         return (
                             <div
                                 key={restaurantID}
-                                className="animate-scale-in card-hover bg-white rounded-2xl shadow-lg overflow-hidden group"
+                                className="animate-scale-in card-hover bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden group"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
                                 {/* Image */}
-                                <div className="relative h-48 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden">
-                                    <div className="absolute inset-0 flex items-center justify-center text-white text-6xl group-hover:scale-110 transition-transform duration-500">
+                                <div className="relative h-40 sm:h-48 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden">
+                                    <div className="absolute inset-0 flex items-center justify-center text-white text-5xl sm:text-6xl group-hover:scale-110 transition-transform duration-500">
                                         {type?.toLowerCase().includes('pizza') ? '🍕' :
                                             type?.toLowerCase().includes('burger') ? '🍔' :
                                                 type?.toLowerCase().includes('sushi') || type?.toLowerCase().includes('asian') ? '🍱' :
@@ -77,7 +77,7 @@ const FeaturedRestaurants = ({ restaurants }) => {
                                 {/* Content */}
                                 <div className="p-6">
                                     {/* Restaurant Name */}
-                                    <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">
+                                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">
                                         {restaurantName}
                                     </h3>
 
@@ -115,7 +115,7 @@ const FeaturedRestaurants = ({ restaurants }) => {
                 </div>
 
                 {/* View All Button */}
-                <div className="text-center mt-12">
+                <div className="text-center mt-8 sm:mt-10 md:mt-12">
                     <Link to="/explore" className="btn-secondary inline-block">
                         View All Restaurants
                     </Link>

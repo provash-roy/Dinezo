@@ -13,20 +13,20 @@ const categories = [
 
 const Categories = () => {
     return (
-        <section className="py-16 bg-white">
+        <section className="py-12 sm:py-14 md:py-16 lg:py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-12 animate-fade-in">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <div className="text-center mb-8 sm:mb-10 md:mb-12 animate-fade-in">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
                         Explore by <span className="gradient-text">Category</span>
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
                         Discover restaurants by your favorite cuisine type
                     </p>
                 </div>
 
                 {/* Categories Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
                     {categories.map((category, index) => (
                         <div
                             key={category.id}
@@ -35,26 +35,26 @@ const Categories = () => {
                         >
                             <div className="relative group">
                                 {/* Card */}
-                                <div className={`bg-gradient-to-br ${category.color} rounded-2xl p-6 text-center shadow-lg`}>
+                                <div className={`bg-gradient-to-br ${category.color} rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center shadow-lg`}>
                                     {/* Emoji */}
-                                    <div className="text-5xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                                    <div className="text-4xl sm:text-5xl mb-2 sm:mb-3 transform group-hover:scale-110 transition-transform duration-300">
                                         {category.emoji}
                                     </div>
                                     {/* Name */}
-                                    <h3 className="text-white font-semibold text-sm md:text-base">
+                                    <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base">
                                         {category.name}
                                     </h3>
                                 </div>
 
                                 {/* Hover Glow Effect */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10`}></div>
+                                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-xl sm:rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10`}></div>
                             </div>
                         </div>
                     ))}
                 </div>
 
                 {/* View All Button */}
-                <div className="text-center mt-12">
+                <div className="text-center mt-8 sm:mt-10 md:mt-12">
                     <button className="btn-secondary">
                         View All Categories
                     </button>

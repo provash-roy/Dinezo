@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 
 import Explore from "../layouts/Explore";
 import Login from "../pages/Login";
+import Register from "../pages/Register";
 import Main from "../layouts/Main";
 import Home from "../pages/Home";
 import RestaurantMenu from "../pages/Home/components/RestaurantMenu";
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/register",
+    element: <Register />,
+  },
 ]);
 
 export default router;
+

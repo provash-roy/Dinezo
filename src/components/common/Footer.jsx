@@ -6,9 +6,9 @@ const Footer = () => {
 
     return (
         <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     {/* Brand */}
                     <div className="animate-fade-in">
                         <h3 className="text-3xl font-bold gradient-text mb-4">DINEZO</h3>
