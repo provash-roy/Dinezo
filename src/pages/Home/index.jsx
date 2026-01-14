@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
 import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import FeaturedRestaurants from "./components/FeaturedRestaurants";
@@ -9,14 +10,16 @@ import Footer from "../../components/common/Footer";
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
         const res = await axios.get("/api/Restaurant");
         setRestaurants(res.data);
-      } catch (error) {
-        console.error("Error fetching restaurants:", error);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load restaurants. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -26,24 +29,30 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <div className="min-h-screen flex flex-col gap-12 sm:gap-16 md:gap-24">
       <Hero />
-
-      {/* Categories Section */}
       <Categories />
 
-      {/* Featured Restaurants */}
-      <FeaturedRestaurants restaurants={restaurants} />
+      {loading && (
+        <div className="py-20 flex justify-center">
+          <div className="animate-spin rounded-full h-10 w-10 border-4 border-orange-600 border-t-transparent"></div>
+        </div>
+      )}
 
-      {/* How It Works */}
+      {error && (
+        <div className="text-center text-red-500 py-10 px-4">
+          {error}
+        </div>
+      )}
+
+      {!loading && !error && (
+        <FeaturedRestaurants restaurants={restaurants} />
+      )}
+
       <HowItWorks />
-
-      {/* Footer */}
       <Footer />
     </div>
   );
 };
 
 export default Home;
-
