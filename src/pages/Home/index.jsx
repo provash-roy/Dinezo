@@ -1,9 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router";
+import Hero from "./components/Hero";
+import Categories from "./components/Categories";
+import FeaturedRestaurants from "./components/FeaturedRestaurants";
+import HowItWorks from "./components/HowItWorks";
+import Footer from "../../components/common/Footer";
 
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -12,6 +17,8 @@ const Home = () => {
         setRestaurants(res.data);
       } catch (error) {
         console.error("Error fetching restaurants:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -19,29 +26,24 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h3 className="font-bold"> All Restaurants</h3>
-      {restaurants.map((restaurant) => {
-        const { restaurantID, restaurantName, type } = restaurant;
-        return (
-          <div key={restaurantID} className="border p-4 m-4">
-            <h4 className="text-2xl font-bold">{restaurantName}</h4>
-            <h4 className="text-2xl font-bold">{type}</h4>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <Hero />
 
-            <div className="my-2">
-              <Link
-                to={`/restaurants/${restaurantID}`}
-                className="border p-1 rounded-xl font-bold bg-blue-600 "
-                state={restaurant}
-              >
-                View Details
-              </Link>
-            </div>
-          </div>
-        );
-      })}
+      {/* Categories Section */}
+      <Categories />
+
+      {/* Featured Restaurants */}
+      <FeaturedRestaurants restaurants={restaurants} />
+
+      {/* How It Works */}
+      <HowItWorks />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
 
 export default Home;
+
